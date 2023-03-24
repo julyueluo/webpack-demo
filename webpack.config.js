@@ -1,10 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-  mode: "development",
+  mode: "production", //"development",
   entry: path.join(__dirname, "src", "index.js"),
   output: {
-    filename: "bundle.js",
+    filename: "bundle.[contenthash].js",
     path: path.join(__dirname, "dist"),
   },
   module: {
@@ -23,8 +23,8 @@ module.exports = {
       filename: "index.html",
     }),
   ],
-  devServer: {
-    port: 3000,
-    static: path.join(__dirname, "dist"),
-  },
+  // devServer: {
+  //   port: 3000,
+  //   static: path.join(__dirname, "dist"),
+  // },
 };
